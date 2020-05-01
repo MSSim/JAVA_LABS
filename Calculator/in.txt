@@ -1,0 +1,6 @@
+# b = 6
+DEFINE b 8
+PUSH b
+PUSH 6
+*
+PRINT
