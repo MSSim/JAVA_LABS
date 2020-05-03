@@ -5,10 +5,10 @@ package stackCalc.commands;
         import java.util.Stack;
         import static org.junit.Assert.assertEquals;
 
-class MultTest {
+public class MultTest {
 
     @Test
-    void execute() {
+   public void execute() {
         Mult m = new Mult();
         Map<String, Double> define = new HashMap<>();
         Stack<Double> stack = new Stack<>();

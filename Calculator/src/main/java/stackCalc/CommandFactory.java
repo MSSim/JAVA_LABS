@@ -18,7 +18,7 @@ public class CommandFactory {
     private CommandFactory() {
         Properties prop = new Properties();
         try (InputStream config = CommandFactory.class.getResourceAsStream("cmd.properties")) {
-            prop.load(config);     //загрузила все настройки
+            prop.load(config);     //загрузила все настройки из кмд пропертис
         } catch (IOException e) {
             logger.info("Unable to open config stream");
         }
@@ -36,7 +36,7 @@ public class CommandFactory {
             try {
                 Class c;
                 c = Class.forName(commandConf.get(cmdName.toLowerCase()));//возвращаю класс по имени класса
-                return (Command) c.newInstance();
+                return (Command) c.newInstance();                  //вызов конструктора нулевого парам
             } catch (Exception e) {
                 throw new FactoryException("Unable to instance the class");
             }

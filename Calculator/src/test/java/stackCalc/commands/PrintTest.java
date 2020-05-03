@@ -8,10 +8,10 @@ package stackCalc.commands;
 
         import static org.junit.Assert.assertEquals;
 
-class PrintTest {
+public class PrintTest {
 
     @Test
-    void execute() {
+ public    void execute() {
         Print pr = new Print();
         Map<String, Double> define = new HashMap<>();
         Stack<Double> stack = new Stack<>();

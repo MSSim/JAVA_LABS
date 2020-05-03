@@ -9,10 +9,10 @@ import java.util.Stack;
 import static org.junit.Assert.assertEquals;
 
 
-class AddTest {
+ public class AddTest {
 
     @Test
-    void execute() {
+  public   void execute() {
         Add add = new Add();
         Map<String, Double> define = new HashMap<>();
         Stack<Double> stack = new Stack<>();

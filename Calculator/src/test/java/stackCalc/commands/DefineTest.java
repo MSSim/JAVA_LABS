@@ -7,9 +7,9 @@ import java.util.Stack;
 
 import static org.junit.Assert.assertEquals;
 
-class DefineTest {
+public class DefineTest {
     @Test
-    void execute() {
+    public void execute() {
         Define def = new Define();
         Map<String, Double> define = new HashMap<>();
         define.put("a", 5.0);

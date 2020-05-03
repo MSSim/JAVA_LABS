@@ -8,7 +8,7 @@ package stackCalc.commands;
 
         import static org.junit.Assert.assertEquals;
 
-class DivTest {
+public class DivTest {
 
     @Test
     public void execute() {

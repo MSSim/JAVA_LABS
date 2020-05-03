@@ -7,10 +7,10 @@ import java.util.Map;
 import java.util.Stack;
 import static org.junit.Assert.assertEquals;
 
-class SqrtTest {
+public class SqrtTest {
 
     @Test
-    void execute() {
+   public void execute() {
         Sqrt sqrt = new Sqrt();
         Map<String, Double> define = new HashMap<>();
         Stack<Double> stack = new Stack<>();

@@ -8,7 +8,7 @@ import java.util.Stack;
 
 import static org.junit.Assert.assertEquals;
 
-class SubTest {
+public class SubTest {
 
     @Test
     public void execute() {
