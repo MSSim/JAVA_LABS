@@ -43,6 +43,8 @@ public class Road extends JPanel implements ActionListener, Runnable {
             try {
                 Thread.sleep(rand.nextInt(2000) + 1200, 500);
                 enemies.add(new Enemy(1600, rand.nextInt(4), 50, rand.nextInt(3), this));
+                enemies.get(rand.nextInt(enemies.size())).flag = 1;
+
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
