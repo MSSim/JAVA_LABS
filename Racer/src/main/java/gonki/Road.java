@@ -19,14 +19,17 @@ public class Road extends JPanel implements ActionListener, Runnable {
     Player p = new Player();
     Thread enemiesFactory = new Thread(this);        //this реализует интерфейс ранэбл, имеющий единственную функцию run
     Thread audioThread = new Thread(new Audio());           //еще один поток
-    List<Enemy> enemies = new ArrayList<>();               // создаем лист врагов
+    List<Enemy> enemies = new ArrayList<>();
+    int level;
+    // создаем лист врагов
 
     public Road() {
         mainTimer.start();
         enemiesFactory.start();
-       audioThread.start();                  // run внутри Audio
+        audioThread.start();                  // run внутри Audio
         addKeyListener(new MyKeyAdapter());      //чтобы следить за нажатыми клавишами
         setFocusable(true);
+        level = JOptionPane.showConfirmDialog(null, "Хотите включить сложный уровень?", "выбор уровня", JOptionPane.YES_NO_OPTION);
     }
 
     public void actionPerformed(ActionEvent e) {
@@ -43,7 +46,8 @@ public class Road extends JPanel implements ActionListener, Runnable {
             try {
                 Thread.sleep(rand.nextInt(2000) + 1200, 500);
                 enemies.add(new Enemy(1600, rand.nextInt(4), 50, rand.nextInt(3), this));
-                enemies.get(rand.nextInt(enemies.size())).flag = 1;
+                if (level == 0)
+                    enemies.get(rand.nextInt(enemies.size())).flag = 1;
 
             } catch (InterruptedException e) {
                 e.printStackTrace();
@@ -55,6 +59,7 @@ public class Road extends JPanel implements ActionListener, Runnable {
         public void keyPressed(KeyEvent e) {
             p.keyPressed(e);
         }
+
         public void keyReleased(KeyEvent e) {
             p.keyReleased(e);
         }
